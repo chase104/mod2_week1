@@ -1,4 +1,4 @@
-const person = {
+const John = {
     name: "John",
     age: 40,
     savings: 1000,
@@ -31,6 +31,68 @@ const person = {
       }
     ]
   };
+
+
+
+
+let getSavings = (personObject) => {
+  // base case (not calling itself!!!!)
+  let savings = personObject.savings;
+
+
+
+  if (personObject.children.length) {
+    personObject.children.forEach((child) => {
+      savings += getSavings(child)
+    });
+  } else {
+    return savings;
+  }
+
+  return savings;
+
+}
+
+// let totalSavings = getSavings(John);
+
+// console.log(totalSavings);
+
+const doFactorial = (n) => {
+
+  if (n === 1) {
+    return 1
+  } else {
+    let newN = n*doFactorial(n-1)
+    return newN
+  }
+
+
+}
+
+// doFactorialLoops = (n) => {
+//   let total = 1;
+//   for (let i=n; i>0 i--) {
+//     total 
+//   }
+// }
+let finalResult = doFactorial(6);
+
+console.log(finalResult);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const person2 = {
     name: "John",
@@ -100,18 +162,25 @@ const person2 = {
     ]
   };
   
-  // Recursive function to calculate total family savings
-  function totalSavings(person) {
-    let sum = person.savings;
+
+
+
+
+
+
+
+  // // Recursive function to calculate total family savings
+  // function totalSavings(person) {
+  //   let sum = person.savings;
   
-    for (let child of person.children) {
-      sum += totalSavings(child);
-    }
+  //   for (let child of person.children) {
+  //     sum += totalSavings(child);
+  //   }
   
-    return sum;
-  }
+  //   return sum;
+  // }
   
-  console.log(totalSavings(person)); // Expected output: 1955
+  // console.log(totalSavings(person)); // Expected output: 1955
   
   
   //  Recursive function to calculate total family savings
